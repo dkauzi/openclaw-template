@@ -17,8 +17,11 @@ const cfg = {
   },
   gateway: {
     port: parseInt(process.env.PORT || '18789'),
-    bind: 'lan',
-    auth: { mode: 'none' }
+    bind: 'auto',
+    auth: {
+      mode: 'token',
+      token: process.env.OPENCLAW_GATEWAY_TOKEN || 'demo'
+    }
   }
 };
 
