@@ -21,6 +21,12 @@ const cfg = {
     auth: {
       mode: 'token',
       token: process.env.OPENCLAW_GATEWAY_TOKEN || 'demo'
+    },
+    controlUi: {
+      allowedOrigins: (process.env.RAILWAY_PUBLIC_DOMAIN
+        ? ['https://' + process.env.RAILWAY_PUBLIC_DOMAIN]
+        : ['*']
+      )
     }
   }
 };
